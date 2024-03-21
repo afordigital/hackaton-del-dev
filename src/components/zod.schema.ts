@@ -1,14 +1,26 @@
 import { z } from "zod";
 
 export const validationSchema = z.object({
-  project: z.array(
+  project_name: z.string().min(1, { message: "Campo requerido" }),
+  project_description: z.string().min(12, { message: "Campo requerido" }),
+  project_url: z
+    .string()
+    .min(1, { message: "Campo requerido" })
+    .url()
+    .includes("github.com", { message: "URL de GitHub no válida" }),
+  participants: z.array(
     z.object({
-      project_name: z.string().min(1),
-      project_description: z.string().min(24),
-      github: z.string(),
+      participant_name: z.string().min(1, { message: "Campo requerido" }),
+      participant_country: z.string().min(1, { message: "Campo requerido" }),
+      participant_email: z
+        .string()
+        .email({ message: "Email no válido" })
+        .min(1, { message: "Campo requerido" }),
     })
   ),
 });
 
 export type FormType = z.infer<typeof validationSchema>;
-export type Project = z.infer<typeof validationSchema>["project"][0];
+export type ParticipantsType = z.infer<
+  typeof validationSchema
+>["participants"][0];

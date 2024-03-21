@@ -1,3 +1,7 @@
 body {
   background-color: #161616;
 }
+
+li[data-sonner-toast][data-type="success"] svg {
+  @apply green;
+}

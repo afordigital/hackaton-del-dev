@@ -11,6 +11,7 @@ export default defineConfig({
       cGreenText: "#35D78B",
       cGreenButton: "#2F8F62",
       cGreenStroke: "#33CA86",
+      cRed: "#EC3F3F",
     },
   },
   presets: [

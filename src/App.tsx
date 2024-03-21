@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Rules } from "./components/Rules";
 import { Register } from "./components/Register";
 import { Home } from "./components/Home";
+import { Toaster } from "sonner";
 
 function App() {
   return (
@@ -12,6 +13,15 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/regulation" element={<Rules />} />
         </Routes>
+        <Toaster
+          theme="dark"
+          toastOptions={{
+            style: { background: "#171717" },
+            classNames: {
+              toast: "border border-cGreenStroke",
+            },
+          }}
+        />
       </section>
     </main>
   );

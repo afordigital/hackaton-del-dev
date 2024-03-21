@@ -10,6 +10,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@hookform/resolvers": "3.3.4",
     "@unocss/reset": "^0.56.5",
     "lucide-react": "^0.360.0",
     "react": "^18.2.0",
