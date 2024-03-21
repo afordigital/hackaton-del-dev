@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "./common/Button";
+import Spline from "@splinetool/react-spline";
 
 export const Header = () => {
   return (
@@ -12,7 +13,7 @@ export const Header = () => {
           <Button onClick={() => {}}>Registrarme</Button>
         </Link>
       </section>
-      <p className="text-7xl">33</p>
+      <Spline scene="https://prod.spline.design/M1HgjURyO4sZWucZ/scene.splinecode" />
     </header>
   );
 };
