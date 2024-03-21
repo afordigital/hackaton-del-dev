@@ -1,7 +1,7 @@
 export const Register = () => {
   return (
-    <>
-      <h1>Regístrate</h1>
+    <section className="flex flex-col w-full mt-20">
+      <h1 className="w-fill text-center py-8 text-6xl font-bold">Regístrate</h1>
       <p>
         Aunque te hayas prescrito, debes registrarte con todos los datos que se
         solicitan en el formulario.
@@ -12,22 +12,23 @@ export const Register = () => {
         participación
       </p>
 
-      <form>
+      <form className="flex flex-col mt-6 gap-y-4">
         <label htmlFor="name">Nombre del proyecto*</label>
         <input
-          type="text"
+          type="text-area"
           id="name"
           name="name"
-          value={"name"}
+          value="name"
+          className="bg-cSecondary h-[72px] px-8 rounded-[5px]"
           onChange={() => {}}
         />
 
         <label htmlFor="description">Descripción del proyecto*</label>
-        <input
-          type="text"
+        <textarea
           id="description"
           name="description"
-          value={"description"}
+          placeholder="Introduce una breve descripción explicativa..."
+          className="bg-cSecondary py-4 px-8 rounded-[5px]"
           onChange={() => {}}
         />
 
@@ -36,10 +37,11 @@ export const Register = () => {
           type="text"
           id="github"
           name="github"
-          value={"github"}
+          // value={"github"}
+          className="bg-cSecondary h-[72px] px-8 rounded-[5px]"
           onChange={() => {}}
         />
       </form>
-    </>
+    </section>
   );
 };
