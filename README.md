@@ -67,3 +67,5 @@ and open http://localhost:3000 🌺.
 https://www.figma.com/file/DB7UnFLhRHdJHN1aE4dTLj/Landing-hackathon?type=design&node-id=86%3A192&mode=design&t=2RUeY0uJmcgMi0wG-1
 
 ## Deployment
+
+Vercel: [Hackaton del dev](https://hackaton-del-dev.vercel.app/)
