@@ -20,6 +20,24 @@ li[data-sonner-toast][data-type='error'] svg {
   grid-auto-rows: 22rem;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
+
+
+/* Animations */
+.animate-fade-down {
+  animation: fadeDown ease-in-out both 200ms;
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* delete after José fix Spline animation */
 canvas {
   width: 300px !important;
@@ -29,12 +47,12 @@ canvas {
 
 .award-container {
   min-height: 450px;
-  
+
   display: flex;
   justify-content: center;
   align-items: flex-end;
   gap: 4rem;
-  
+
   @media (width <= 800px) {
     flex-direction: column;
     align-items: center;
