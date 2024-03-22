@@ -18,6 +18,9 @@ export const validationSchema = z.object({
         .min(1, { message: "Campo requerido" }),
     })
   ),
+  terms_and_conditions: z.boolean().refine((value) => value === true, {
+    message: "Debes aceptar los términos y condiciones",
+  }),
 });
 
 export type FormType = z.infer<typeof validationSchema>;

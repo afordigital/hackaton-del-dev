@@ -3,8 +3,9 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 import { FormType, validationSchema } from "../zod.schema";
-import { Input } from "./components/Input";
 import { Participants } from "./components/Participants";
+import { TermsAndConditions } from "./components/TermsAndConditions";
+import { ProjectForm } from "./components/ProjectForm";
 
 const defaultValues = {
   participants: [
@@ -39,7 +40,7 @@ export const Register = () => {
 
 
   return (
-    <section className="flex flex-col w-full mt-10 pb-20">
+    <section className="flex flex-col w-full mt-10 pb-10">
       <h1 className="w-fill text-center py-8 text-7xl font-bold title-gradient">
         Regístrate
       </h1>
@@ -56,37 +57,10 @@ export const Register = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col mt-18 gap-y-7"
       >
-        <Input
-          label="Nombre del proyecto"
-          placeholder="Introduce el nombre del proyecto"
-          register={register}
-          registerName="project_name"
-          error={errors["project_name"]}
-        />
-
-        <Input
-          label="Descripción"
-          placeholder="Introduce una breve descripción explicativa..."
-          register={register}
-          registerName="project_description"
-          error={errors["project_description"]}
-        />
-
-        <Input
-          label="Repositorio de Github"
-          placeholder="Introduce la URL de tu repositorio"
-          register={register}
-          registerName="project_url"
-          error={errors["project_url"]}
-        />
-
+        <ProjectForm register={register} errors={errors} />
         <Participants control={control} errors={errors} trigger={trigger} register={register} />
+        <TermsAndConditions register={register} errors={errors} />
 
-        <p className="text-[18px] text-cTertiary">
-          <input type="checkbox" className="mr-2" />
-          Al enviar mi participación, confirmo que he leído y acepto los{' '}
-          <a className="underline">términos y condiciones</a> de privacidad.
-        </p>
         <button className="py-2 px-6 font-bold hover:bg-cGreenStroke w-fit rounded-[5px] bg-cGreenButton self-center">
           Enviar participación
         </button>

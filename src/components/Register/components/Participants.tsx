@@ -9,7 +9,6 @@ type Props = {
   register: UseFormRegister<FormType>;
   trigger: UseFormTrigger<FormType>;
   errors: FieldErrors<FormType>;
-
 }
 
 export const Participants: FC<Props> = ({control, register, trigger, errors}) => {
@@ -24,13 +23,12 @@ export const Participants: FC<Props> = ({control, register, trigger, errors}) =>
       if (result) {
         prepend({ participant_country: "", participant_email: "", participant_name: "" })
       }
-
     });
   }
 
   return (
     <>
-      <div className="mt-14 flex justify-between items-center">
+      <div className="mt-12 flex justify-between items-center">
           <p className="text-5xl font-bold pb-5 title-gradient">Participantes</p>
           <button
             type="button"
