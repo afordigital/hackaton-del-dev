@@ -1,21 +1,25 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 
-import { FormType, validationSchema } from "../zod.schema";
-import { Participants } from "./components/Participants";
-import { TermsAndConditions } from "./components/TermsAndConditions";
-import { ProjectForm } from "./components/ProjectForm";
+import { RegisterForm, RegisterFormSchema } from '../zod.schema'
+import { Participants } from './components/Participants'
+import { TermsAndConditions } from './components/TermsAndConditions'
+import { ProjectForm } from './components/ProjectForm'
 
-const defaultValues = {
+const DEFAULT_REGISTER_FORM_VALUES: RegisterForm = {
+  project_name: '',
+  project_description: '',
+  project_url: '',
   participants: [
     {
-      participant_name: "",
-      participant_country: "",
-      participant_email: "",
+      participant_name: '',
+      participant_country: '',
+      participant_email: '',
     },
   ],
-};
+  terms_and_conditions: false,
+} as const
 
 export const Register = () => {
   const {
@@ -25,18 +29,16 @@ export const Register = () => {
     reset,
     control,
     trigger,
-  } = useForm<FormType>({
-    resolver: zodResolver(validationSchema),
-    defaultValues: defaultValues,
-  });
+  } = useForm<RegisterForm>({
+    resolver: zodResolver(RegisterFormSchema),
+    defaultValues: DEFAULT_REGISTER_FORM_VALUES,
+  })
 
-
-  const onSubmit = (data: FormType) => {
-    console.log("data", data);
-    reset();
-    toast.success("¡Felicidades! Acabas de registrar tu aplicación");
-  };
-
+  const onSubmit = (data: RegisterForm) => {
+    console.log('data', data)
+    reset()
+    toast.success('¡Felicidades! Acabas de registrar tu aplicación')
+  }
 
   return (
     <section className="flex flex-col w-full mt-10 pb-10 px-2">
@@ -57,7 +59,12 @@ export const Register = () => {
         className="flex flex-col mt-18 gap-y-7"
       >
         <ProjectForm register={register} errors={errors} />
-        <Participants control={control} errors={errors} trigger={trigger} register={register} />
+        <Participants
+          register={register}
+          control={control}
+          errors={errors.participants}
+          trigger={trigger}
+        />
         <TermsAndConditions register={register} errors={errors} />
 
         <button className="py-2 px-6 font-bold hover:bg-cGreenStroke w-fit rounded-[5px] bg-cGreenButton self-center">
@@ -65,5 +72,5 @@ export const Register = () => {
         </button>
       </form>
     </section>
-  );
-};
+  )
+}
