@@ -13,3 +13,10 @@ li[data-sonner-toast][data-type='warning'] svg {
 li[data-sonner-toast][data-type='error'] svg {
   color: #ef4444;
 }
+
+.layout-responsive {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 22rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
