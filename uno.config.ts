@@ -7,11 +7,15 @@ export default defineConfig({
       cPrimary: '#151515',
       cSecondary: '#2E2E2E',
       cTertiary: '#A8A8A8',
+      cStrokeBox: '#767676',
       cWhite: '#EFEFEF',
       cGreenText: '#35D78B',
       cGreenButton: '#2F8F62',
       cGreenStroke: '#33CA86',
       cRed: '#EC3F3F'
+    },
+    dropShadow: {
+      'customShadow': '0 0 48px rgba(115, 134, 125, 0.30)',
     }
   },
   shortcuts: {
@@ -22,7 +26,9 @@ export default defineConfig({
     presetUno(),
     presetWebFonts({
       provider: 'google',
-      fonts: {}
+      fonts: {
+        inter: 'Inter'
+      }
     }),
     presetIcons({
       cdn: 'https://esm.sh/',

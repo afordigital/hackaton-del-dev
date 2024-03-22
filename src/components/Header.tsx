@@ -18,7 +18,7 @@ export const Header = () => {
         <ButtonLink to="register">Registrarme</ButtonLink>
       </section>
       <div className="h-[600px]">
-        <Spline scene="https://prod.spline.design/M1HgjURyO4sZWucZ/scene.splinecode" />
+        {/* <Spline scene="https://prod.spline.design/M1HgjURyO4sZWucZ/scene.splinecode" /> */}
       </div>
     </header>
   )
