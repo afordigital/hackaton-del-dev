@@ -1,29 +1,29 @@
-import { z } from "zod";
+import { z } from 'zod'
 
-export const validationSchema = z.object({
-  project_name: z.string().min(1, { message: "Campo requerido" }),
-  project_description: z.string().min(12, { message: "Campo requerido" }),
+export const RegisterFormSchema = z.object({
+  project_name: z.string().min(1, { message: 'Campo requerido' }),
+  project_description: z.string().min(12, { message: 'Campo requerido' }),
   project_url: z
     .string()
-    .min(1, { message: "Campo requerido" })
+    .min(1, { message: 'Campo requerido' })
     .url()
-    .includes("github.com", { message: "URL de GitHub no válida" }),
+    .includes('github.com', { message: 'URL de GitHub no válida' }),
   participants: z.array(
     z.object({
-      participant_name: z.string().min(1, { message: "Campo requerido" }),
-      participant_country: z.string().min(1, { message: "Campo requerido" }),
+      participant_name: z.string().min(1, { message: 'Campo requerido' }),
+      participant_country: z.string().min(1, { message: 'Campo requerido' }),
       participant_email: z
         .string()
-        .email({ message: "Email no válido" })
-        .min(1, { message: "Campo requerido" }),
-    })
+        .email({ message: 'Email no válido' })
+        .min(1, { message: 'Campo requerido' }),
+    }),
   ),
   terms_and_conditions: z.boolean().refine((value) => value === true, {
-    message: "Debes aceptar los términos y condiciones",
+    message: 'Debes aceptar los términos y condiciones',
   }),
-});
+})
 
-export type FormType = z.infer<typeof validationSchema>;
-export type ParticipantsType = z.infer<
-  typeof validationSchema
->["participants"][0];
+export type RegisterForm = z.infer<typeof RegisterFormSchema>
+export type RegisterFormParticipants = z.infer<
+  typeof RegisterFormSchema
+>['participants'][0]
