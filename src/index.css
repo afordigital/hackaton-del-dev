@@ -20,3 +20,9 @@ li[data-sonner-toast][data-type='error'] svg {
   grid-auto-rows: 22rem;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
+/* delete after José fix Spline animation */
+canvas {
+  width: 300px !important;
+  margin-top: -5rem;
+  margin-right: -2rem;
+}
