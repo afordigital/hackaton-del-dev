@@ -11,7 +11,7 @@ type InputProps = React.ComponentProps<'input'> & {
 export const Input = React.forwardRef(
   (
     { label, error, ...inputProps }: InputProps,
-    ref: React.Ref<HTMLInputElement>,
+    ref: React.Ref<HTMLInputElement>
   ) => {
     return (
       <div className="flex flex-col gap-1">
@@ -41,5 +41,5 @@ export const Input = React.forwardRef(
         </span>
       </div>
     )
-  },
+  }
 )

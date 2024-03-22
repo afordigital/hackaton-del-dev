@@ -6,5 +6,5 @@ export const Awards = () => {
       <div className="bg-green w-full h-[200px]">aaa</div>
       hola
     </div>
-  );
-};
+  )
+}

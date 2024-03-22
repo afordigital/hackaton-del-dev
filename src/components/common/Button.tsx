@@ -1,7 +1,7 @@
 type ButtonProps = {
-  children: React.ReactNode;
-  onClick: () => void;
-};
+  children: React.ReactNode
+  onClick: () => void
+}
 
 export const Button = ({ children, onClick }: ButtonProps) => {
   return (
@@ -11,5 +11,5 @@ export const Button = ({ children, onClick }: ButtonProps) => {
     >
       {children}
     </button>
-  );
-};
+  )
+}

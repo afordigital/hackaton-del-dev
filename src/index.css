@@ -2,14 +2,14 @@ body {
   background-color: #161616;
 }
 
-li[data-sonner-toast][data-type="success"] svg {
+li[data-sonner-toast][data-type='success'] svg {
   color: #10b981;
 }
 
-li[data-sonner-toast][data-type="warning"] svg {
+li[data-sonner-toast][data-type='warning'] svg {
   color: #f59e0b;
 }
 
-li[data-sonner-toast][data-type="error"] svg {
+li[data-sonner-toast][data-type='error'] svg {
   color: #ef4444;
 }

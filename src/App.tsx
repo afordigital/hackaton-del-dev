@@ -1,10 +1,10 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom'
 // import { Rules } from "./components/Rules";
-import { Register } from "./components/Register";
-import { Home } from "./components/Home";
-import { Toaster } from "sonner";
-import { routes } from "./routes";
-import { Nav } from "./components/Nav";
+import { Register } from './components/Register'
+import { Home } from './components/Home'
+import { Toaster } from 'sonner'
+import { routes } from './routes'
+import { Nav } from './components/Nav'
 
 function App() {
   return (
@@ -19,15 +19,15 @@ function App() {
         <Toaster
           theme="dark"
           toastOptions={{
-            style: { background: "#171717" },
+            style: { background: '#171717' },
             classNames: {
-              toast: "border border-cSecondary",
-            },
+              toast: 'border border-cSecondary'
+            }
           }}
         />
       </section>
     </main>
-  );
+  )
 }
 
-export default App;
+export default App
