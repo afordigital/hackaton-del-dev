@@ -16,7 +16,7 @@ export const Input = ({
   error,
 }: InputProps) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col space-y-[8px]">
       <label
         htmlFor="name"
         className={`font-[20px] font-bold ${

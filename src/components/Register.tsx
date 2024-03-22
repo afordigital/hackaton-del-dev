@@ -39,19 +39,21 @@ export const Register = () => {
   };
 
   return (
-    <section className="flex flex-col w-full my-20 pb-20">
-      <h1 className="w-fill text-center py-8 text-7xl font-bold bg-gradient-to-r text-transparent bg-clip-text from-[#EEF1F0] to-[#999999]">
+    <section className="flex flex-col w-full my-6 md:my-16 xl:my-20 pb-20 px-8 xl:px-0 lg:px-4">
+      <h1 className="w-fill text-center py-8 text-5xl md:text-6xl xl:text-7xl font-bold bg-gradient-to-r text-transparent bg-clip-text from-[#EEF1F0] to-[#999999] mb-4 md:mb-12">
         Regístrate
       </h1>
-      <p>
-        Aunque te hayas prescrito, debes registrarte con todos los datos que se
-        solicitan en el formulario.
-      </p>
-      <p>
-        Si quieres ver el resto de detalles, revisa{" "}
-        <a className="text-cGreen">el reglamento</a> ants de enviar tu
-        participación
-      </p>
+      <div className="space-y-4 xl:space-y-2">
+        <p className="text-lg font-bold">
+          Aunque te hayas prescrito, debes registrarte con todos los datos que se
+          solicitan en el formulario.
+        </p>
+        <p className="text-md font-bold md:text-lg">
+          Si quieres ver el resto de detalles, revisa{" "}
+          <a className="text-cGreenText">el reglamento</a> ants de enviar tu
+          participación
+        </p>
+      </div>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -81,28 +83,31 @@ export const Register = () => {
           error={errors["project_url"]?.message}
         />
 
-        <p className="text-5xl font-bold py-8">Participantes</p>
+        <p className="text-3xl md:text-4xl xl:text-5xl font-bold py-8">Participantes</p>
 
         {fields.map((item, index) => {
           return (
             <>
-              <Input
-                label="Nombre del participante"
-                placeholder="Introduce el nombre del participante"
-                register={register}
-                registerName={`participants.${index}.participant_name`}
-                error={errors.participants?.[index]?.participant_name?.message}
-              />
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <Input
+                  label="Nombre del participante"
+                  placeholder="Introduce el nombre del participante"
+                  register={register}
+                  registerName={`participants.${index}.participant_name`}
+                  error={errors.participants?.[index]?.participant_name?.message}
+                />
 
-              <Input
-                label="País"
-                placeholder="Introduce tu país de residencia"
-                register={register}
-                registerName={`participants.${index}.participant_country`}
-                error={
-                  errors.participants?.[index]?.participant_country?.message
-                }
-              />
+                <Input
+                  label="País"
+                  placeholder="Introduce tu país de residencia"
+                  register={register}
+                  registerName={`participants.${index}.participant_country`}
+                  error={
+                    errors.participants?.[index]?.participant_country?.message
+                  }
+                />
+              </div>
 
               <Input
                 label="Email"
