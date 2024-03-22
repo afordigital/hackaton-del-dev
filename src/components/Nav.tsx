@@ -17,7 +17,7 @@ export const Nav = () => {
   }
 
   return isHome ? (
-    <nav className="w-full flex text-[20px] justify-center mt-16 font-semibold justify-center sticky top-5">
+    <nav className="w-full flex text-[20px] justify-center mt-16 font-semibold justify-center sticky z-10 top-5">
       <ul className="flex gap-x-[32px] w-fit bg-[#0f0f0f] py-2 px-10 rounded-full">
         <Link to={ROUTE.home} className={linkClass(isHome)}>
           Inicio
