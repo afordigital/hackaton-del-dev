@@ -9,7 +9,7 @@ import { Regulation } from './components/Regulation'
 function App() {
   return (
     <main className=" h-screen flex bg-cBackogrund text-cWhite">
-      <section className="max-w-7xl mx-auto w-full">
+      <section className="max-w-7xl mx-auto w-full px-8">
         <Nav />
         <Routes>
           <Route path={ROUTE.home} element={<Home />} />

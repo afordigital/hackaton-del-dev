@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Input } from './Input'
 import { FieldErrors, UseFormRegister } from 'react-hook-form'
-import { RegisterForm } from '../../zod.schema'
+import { RegisterForm } from '../zod.schema'
 
 type Props = {
   register: UseFormRegister<RegisterForm>

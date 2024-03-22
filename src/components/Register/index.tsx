@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 
-import { RegisterForm, RegisterFormSchema } from '../zod.schema'
+import { RegisterForm, RegisterFormSchema } from './zod.schema'
 import { Participants } from './components/Participants'
 import { TermsAndConditions } from './components/TermsAndConditions'
 import { ProjectForm } from './components/ProjectForm'
@@ -41,7 +41,7 @@ export const Register = () => {
   }
 
   return (
-    <section className="flex flex-col w-full pb-10 px-8 md:mt-6 xl:mt-10 xl:px-2">
+    <section className="flex flex-col w-full pb-10 md:mt-6 xl:mt-10 xl:px-2">
       <h1 className="w-fill text-center py-8 font-bold title-gradient text-5xl md:text-6xl xl:text-7xl">
         Regístrate
       </h1>

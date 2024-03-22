@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { RegisterForm } from '../../zod.schema'
+import { RegisterForm } from '../zod.schema'
 import { Input } from './Input'
 import {
   Control,
