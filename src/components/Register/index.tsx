@@ -1,22 +1,22 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { toast } from 'sonner';
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
-import { RegisterForm, RegisterFormSchema } from '../zod.schema';
-import { Participants } from './components/Participants';
-import { TermsAndConditions } from './components/TermsAndConditions';
-import { ProjectForm } from './components/ProjectForm';
-import { createClient } from '@supabase/supabase-js';
+import { RegisterForm, RegisterFormSchema } from "../zod.schema";
+import { Participants } from "./components/Participants";
+import { TermsAndConditions } from "./components/TermsAndConditions";
+import { ProjectForm } from "./components/ProjectForm";
+import { createClient } from "@supabase/supabase-js";
 
 const DEFAULT_REGISTER_FORM_VALUES: RegisterForm = {
-  project_name: '',
-  project_description: '',
-  project_url: '',
+  project_name: "",
+  project_description: "",
+  project_url: "",
   participants: [
     {
-      participant_name: '',
-      participant_country: '',
-      participant_email: '',
+      participant_name: "",
+      participant_country: "",
+      participant_email: "",
     },
   ],
   terms_and_conditions: false,
@@ -51,18 +51,18 @@ export const Register = () => {
       }));
 
       const { data: participantsData, error: participantsError } =
-        await supabase.from('Participants').insert(participants);
+        await supabase.from("Participants").insert(participants);
 
       if (participantsError) {
         throw participantsError;
       }
 
-      console.log('Participants Data:', participantsData);
+      console.log("Participants Data:", participantsData);
 
       reset();
-      toast.success('¡Felicidades! Acabas de registrar tu aplicación');
+      toast.success("¡Felicidades! Acabas de registrar tu aplicación");
     } catch (error) {
-      toast.error('Hubo un error al registrar la aplicación :(');
+      toast.error("Hubo un error al registrar la aplicación :(");
     }
   };
 
@@ -76,7 +76,7 @@ export const Register = () => {
         solicitan en el formulario.
       </p>
       <p className='mt-2 text-[18px]'>
-        Si quieres ver el resto de detalles, revisa{' '}
+        Si quieres ver el resto de detalles, revisa{" "}
         <span className='text-cGreenText underline'>el reglamento</span> antes
         de enviar tu participación.
       </p>
