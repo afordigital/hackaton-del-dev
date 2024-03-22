@@ -1,3 +1,3 @@
 export const Regulation = () => {
-  return <>Regulation</>;
-};
+  return <>Regulation</>
+}

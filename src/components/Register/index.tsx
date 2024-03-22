@@ -15,10 +15,10 @@ const DEFAULT_REGISTER_FORM_VALUES: RegisterForm = {
     {
       participant_name: '',
       participant_country: '',
-      participant_email: '',
-    },
+      participant_email: ''
+    }
   ],
-  terms_and_conditions: false,
+  terms_and_conditions: false
 } as const
 
 export const Register = () => {
@@ -28,10 +28,10 @@ export const Register = () => {
     formState: { errors },
     reset,
     control,
-    trigger,
+    trigger
   } = useForm<RegisterForm>({
     resolver: zodResolver(RegisterFormSchema),
-    defaultValues: DEFAULT_REGISTER_FORM_VALUES,
+    defaultValues: DEFAULT_REGISTER_FORM_VALUES
   })
 
   const onSubmit = (data: RegisterForm) => {
@@ -50,9 +50,11 @@ export const Register = () => {
         solicitan en el formulario.
       </p>
       <p className="mt-2 text-[18px]">
-        Si quieres ver el resto de detalles, revisa{" "}
-        <span className="text-cGreenText underline cursor-pointer">el reglamento</span> antes de enviar tu
-        participación.
+        Si quieres ver el resto de detalles, revisa{' '}
+        <span className="text-cGreenText underline cursor-pointer">
+          el reglamento
+        </span>{' '}
+        antes de enviar tu participación.
       </p>
       <form
         onSubmit={handleSubmit(onSubmit)}

@@ -15,12 +15,12 @@ export const RegisterFormSchema = z.object({
       participant_email: z
         .string()
         .email({ message: 'Email no válido' })
-        .min(1, { message: 'Campo requerido' }),
-    }),
+        .min(1, { message: 'Campo requerido' })
+    })
   ),
   terms_and_conditions: z.boolean().refine((value) => value === true, {
-    message: 'Debes aceptar los términos y condiciones',
-  }),
+    message: 'Debes aceptar los términos y condiciones'
+  })
 })
 
 export type RegisterForm = z.infer<typeof RegisterFormSchema>

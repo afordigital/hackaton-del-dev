@@ -6,7 +6,7 @@ import {
   FieldErrors,
   UseFormRegister,
   UseFormTrigger,
-  useFieldArray,
+  useFieldArray
 } from 'react-hook-form'
 import { Plus, Trash } from 'lucide-react'
 
@@ -21,15 +21,15 @@ export const Participants: FC<Props> = ({
   register,
   control,
   errors,
-  trigger,
+  trigger
 }) => {
   const {
     fields: participants,
     prepend: addParticipant,
-    remove: removeParticipant,
+    remove: removeParticipant
   } = useFieldArray({
     control,
-    name: 'participants',
+    name: 'participants'
   })
 
   const handleAddParticipant = () => {
@@ -38,7 +38,7 @@ export const Participants: FC<Props> = ({
         addParticipant({
           participant_country: '',
           participant_email: '',
-          participant_name: '',
+          participant_name: ''
         })
       }
     })
@@ -47,7 +47,9 @@ export const Participants: FC<Props> = ({
   return (
     <>
       <div className="mt-12 flex justify-between items-center flex-wrap gap-8 xl:gap-0">
-        <p className="font-bold pb-5 title-gradient text-3xl md:text-4xl xl:text-5xl">Participantes</p>
+        <p className="font-bold pb-5 title-gradient text-3xl md:text-4xl xl:text-5xl">
+          Participantes
+        </p>
         <button
           type="button"
           onClick={handleAddParticipant}
