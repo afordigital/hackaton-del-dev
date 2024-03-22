@@ -62,7 +62,7 @@ export const Nav = () => {
     </nav>
   ) : (
     <Link to={routes.home} className="font-bold">
-      <span className="flex gap-x-1 mt-10">
+      <span className="flex gap-x-1 mt-10 px-8 xl:px-2">
         <ChevronLeft />
         Volver
 

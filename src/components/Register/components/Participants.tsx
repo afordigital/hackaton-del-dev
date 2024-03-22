@@ -46,8 +46,8 @@ export const Participants: FC<Props> = ({
 
   return (
     <>
-      <div className="mt-12 flex justify-between items-center">
-        <p className="text-5xl font-bold pb-5 title-gradient">Participantes</p>
+      <div className="mt-12 flex justify-between items-center flex-wrap gap-8 xl:gap-0">
+        <p className="font-bold pb-5 title-gradient text-3xl md:text-4xl xl:text-5xl">Participantes</p>
         <button
           type="button"
           onClick={handleAddParticipant}
@@ -63,7 +63,7 @@ export const Participants: FC<Props> = ({
           <div key={field.id}>
             {0 === index ? (
               <div className="flex flex-col gap-y-7">
-                <div className="grid grid-cols-2 gap-x-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <Input
                     label="Nombre*"
                     error={errors?.[index]?.participant_name}

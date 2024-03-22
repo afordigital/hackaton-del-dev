@@ -41,8 +41,8 @@ export const Register = () => {
   }
 
   return (
-    <section className="flex flex-col w-full mt-10 pb-10 px-2">
-      <h1 className="w-fill text-center py-8 text-7xl font-bold title-gradient">
+    <section className="flex flex-col w-full pb-10 px-8 md:mt-6 xl:mt-10 xl:px-2">
+      <h1 className="w-fill text-center py-8 font-bold title-gradient text-5xl md:text-6xl xl:text-7xl">
         Regístrate
       </h1>
       <p className="mt-6 text-[18px]">
