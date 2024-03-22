@@ -21,5 +21,5 @@ export const Faq = () => {
     ))
   }
 
-  return <div className="flex flex-col gap-10">{renderFaqs()}</div>
+  return <div className="flex flex-col gap-10 my-20">{renderFaqs()}</div>
 }
