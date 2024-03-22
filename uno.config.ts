@@ -14,6 +14,9 @@ export default defineConfig({
       cRed: "#EC3F3F",
     },
   },
+  shortcuts: {
+    'title-gradient': 'bg-gradient-to-r text-transparent bg-clip-text from-[#EEF1F0] to-[#555555]',
+  },
   presets: [
     presetUno(),
     presetWebFonts({
