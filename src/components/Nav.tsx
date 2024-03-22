@@ -4,9 +4,9 @@ import { ChevronLeft } from "lucide-react";
 
 export const Nav = () => {
   const { pathname } = useLocation();
-
-
   const isHome = pathname === routes.home;
+
+  const linkClass = (active: boolean)=> `hover:text-green cursor-pointer ${active ? "text-green" : ""}`;
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -17,34 +17,25 @@ export const Nav = () => {
 
   return isHome ? (
     <nav className="w-full flex justify-center mt-10 font-semibold justify-center">
-      <ul className="flex gap-x-4 w-fit bg-[#0f0f0f] py-2 px-16 rounded-full">
+      <ul className="flex gap-x-5 w-fit bg-[#0f0f0f] py-2 px-10 rounded-full">
         <Link
           to={routes.home}
-          className="hover:text-green cursor-pointer"
+          className={linkClass(isHome)}
         >
           Inicio
         </Link>
         <Link
           to={routes.register}
-          className="hover:text-green cursor-pointer"
+          className={linkClass(false)}
         >
-          Registro
-        </Link>
-        <Link
-          to="#rules"
-          onClick={() => {
-            scrollToSection("rules");
-          }}
-          className="hover:text-green cursor-pointer"
-        >
-          Reglas
+          Inscripción
         </Link>
         <Link
           to="#sponsors"
           onClick={() => {
             scrollToSection("sponsors");
           }}
-          className="hover:text-green cursor-pointer"
+          className={linkClass(false)}
         >
           Patrocinadores
         </Link>
@@ -53,9 +44,18 @@ export const Nav = () => {
           onClick={() => {
             scrollToSection("awards");
           }}
-          className="hover:text-green cursor-pointer"
+          className={linkClass(false)}
         >
           Premios
+        </Link>
+        <Link
+          to="#rules"
+          onClick={() => {
+            scrollToSection("rules");
+          }}
+          className={linkClass(false)}
+        >
+          Reglamento
         </Link>
 
       </ul>

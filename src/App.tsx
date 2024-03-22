@@ -9,7 +9,7 @@ import { Nav } from "./components/Nav";
 function App() {
   return (
     <main className=" h-screen flex bg-cBackogrund text-cWhite">
-      <section className="max-w-4xl mx-auto w-full">
+      <section className="max-w-5xl mx-auto w-full">
         <Nav />
         <Routes>
           <Route path={routes.home} element={<Home />} />

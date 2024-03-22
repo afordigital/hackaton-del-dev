@@ -26,7 +26,6 @@ export const Register = () => {
     control,
     trigger,
   } = useForm<FormType>({
-    mode: 'all',
     resolver: zodResolver(validationSchema),
     defaultValues: defaultValues,
   });
@@ -40,7 +39,7 @@ export const Register = () => {
 
 
   return (
-    <section className="flex flex-col w-full mt-10 pb-10">
+    <section className="flex flex-col w-full mt-10 pb-10 px-2">
       <h1 className="w-fill text-center py-8 text-7xl font-bold title-gradient">
         Regístrate
       </h1>
