@@ -3,7 +3,7 @@ import { ButtonLink } from './common/ButtonLink'
 
 export const Header = () => {
   return (
-    <header id="header" className="grid grid-cols-2 mb-32 mt-20">
+    <header id="header" className="flex justify-between mt-20">
       <section>
         <h1 className="w-full text-[96px] title-gradient font-bold leading-28">
           La Hackathon
@@ -17,8 +17,8 @@ export const Header = () => {
         </p>
         <ButtonLink to="register">Registrarme</ButtonLink>
       </section>
-      <div className="h-[600px]">
-        {/* <Spline scene="https://prod.spline.design/M1HgjURyO4sZWucZ/scene.splinecode" /> */}
+      <div className="h-[600px] w-fit">
+        <Spline scene="https://prod.spline.design/M1HgjURyO4sZWucZ/scene.splinecode" />
       </div>
     </header>
   )
