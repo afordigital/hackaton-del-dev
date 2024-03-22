@@ -49,7 +49,7 @@ export const Register = () => {
       </p>
       <p className="mt-2 text-[18px]">
         Si quieres ver el resto de detalles, revisa{" "}
-        <span className="text-cGreenText underline">el reglamento</span> antes de enviar tu
+        <span className="text-cGreenText underline cursor-pointer">el reglamento</span> antes de enviar tu
         participación.
       </p>
       <form
