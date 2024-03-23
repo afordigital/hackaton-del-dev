@@ -29,6 +29,18 @@ li[data-sonner-toast][data-type='error'] svg {
   }
 }
 
+.hero-title {
+  font-size: clamp(2.8rem, 10vw, 6rem);
+}
+
+.hero-description {
+  font-size: clamp(1.4rem, 5vw, 2.25rem);
+}
+
+.hero-caption {
+  font-size: clamp(1rem, 5vw, 1.5rem);
+}
+
 .text-fluid-title {
   font-size: clamp(2.2rem, 10vw, 5rem);
   text-align: center;
