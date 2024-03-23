@@ -83,7 +83,7 @@ canvas {
 }
 
 .box:nth-child(2) {
-  align-self: center;
+  align-self: start;
 
   @media (width <= 1004px) {
     order: -1;
