@@ -4,7 +4,7 @@ import { ButtonLink } from './common/ButtonLink'
 export const Hero = () => {
   return (
     <section id="hero" className="flex justify-between mt-20 relative">
-      <article>
+      <article className="relative z-10">
         <h1 className="hero-title max-w-[12ch] title-gradient font-bold md:leading-28">
           La Hackathon Del Dev
         </h1>
@@ -16,7 +16,7 @@ export const Hero = () => {
         </p>
         <ButtonLink to="register">Registrarme</ButtonLink>
       </article>
-      <div className="h-[600px] w-fit max-lg:absolute max-lg:inset-y-0 max-lg:right-0 my-auto max-lg:-z-1">
+      <div className="h-[600px] w-fit max-lg:absolute max-lg:inset-y-0 max-lg:right-0 my-auto max-lg:z-0">
         <Spline scene="https://prod.spline.design/M1HgjURyO4sZWucZ/scene.splinecode" />
       </div>
     </section>

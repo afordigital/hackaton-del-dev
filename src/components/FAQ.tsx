@@ -22,9 +22,9 @@ export const Faq = () => {
     ))
 
   return (
-    <article className="flex flex-col items-center gap-10 my-20">
+    <section id="faqs" className="flex flex-col items-center gap-10 my-20">
       <Title>Faqs</Title>
       {renderFaqs()}
-    </article>
+    </section>
   )
 }

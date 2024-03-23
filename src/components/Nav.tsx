@@ -7,7 +7,7 @@ export const Nav = () => {
   const isHome = pathname === ROUTE.home
 
   const linkClass = (active: boolean) =>
-    `hover:text-green cursor-pointer ${active ? 'text-green' : ''}`
+    `hover:text-green cursor-pointer transition-colors ${active ? 'text-green' : ''}`
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
@@ -17,7 +17,7 @@ export const Nav = () => {
   }
 
   return isHome ? (
-    <nav className="w-full flex text-[20px] justify-center mt-16 font-semibold justify-center sticky z-10 top-5">
+    <nav className="w-full flex text-[20px] text-cWhite justify-center mt-16 font-semibold justify-center sticky z-10 top-5">
       <ul className="flex gap-x-[32px] w-fit bg-[#0f0f0f] py-2 px-10 rounded-full">
         <Link to={ROUTE.home} className={linkClass(isHome)}>
           Inicio
@@ -50,9 +50,9 @@ export const Nav = () => {
           Premios
         </Link>
         <Link
-          to="#faq"
+          to="#faqs"
           onClick={() => {
-            scrollToSection('faq')
+            scrollToSection('faqs')
           }}
           className={linkClass(false)}
         >
@@ -64,7 +64,7 @@ export const Nav = () => {
       </ul>
     </nav>
   ) : (
-    <Link to={ROUTE.home} className="font-bold">
+    <Link to={ROUTE.home} className="font-bold text-cWhite">
       <span className="flex gap-x-1 mt-10 px-8 xl:px-2">
         <ChevronLeft />
         Volver
