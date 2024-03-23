@@ -21,6 +21,18 @@ li[data-sonner-toast][data-type='error'] svg {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
+@media screen and (max-width: 664.99px) {
+  .layout-responsive {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 665px) and (max-width: 1200px) {
+  .layout-responsive {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .text-fluid-title {
   font-size: clamp(2rem, 10vw, 5rem);
   text-align: center;

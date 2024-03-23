@@ -6,13 +6,16 @@ type RuleProps = {
 
 export const Rule = ({ id, alt, description }: RuleProps) => {
   return (
-    <div className="flex flex-col items-center gap-[64px]">
-      <img loading="lazy"
+    <div className="grid place-items-center gap-2">
+      <img
+        loading="lazy"
         src={`/images/rules/rule_${id}.png`}
-        alt={alt} 
-        className="object-contain h-[200px] w-[300px]"
+        alt={alt}
+        className=""
       />
-      <p className="text-center font-bold text-[24px]">{description}</p>
+      <p className="text-center font-bold text-[24px] text-balance">
+        {description}
+      </p>
     </div>
   )
 }
