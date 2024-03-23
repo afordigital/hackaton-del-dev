@@ -70,7 +70,7 @@ export const QACollapse = ({
   return (
     <div className={classes.container}>
       <button className={classes.button} onClick={handleClick}>
-        <span>{question}</span>
+        <span className="text-start text-balance">{question}</span>
         <img
           className={classes.icon}
           src="/images/faqs/chevron.svg"
