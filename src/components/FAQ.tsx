@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { faqs } from '../data/faqs'
 import { QACollapse } from './QACollapse'
+import { Title } from './common/Title'
 
 export const Faq = () => {
   const [expandedFaq, setExpandedFaq] = useState<string | null>(null)
@@ -8,8 +9,8 @@ export const Faq = () => {
   const handleExpanderClick = (id: string) => {
     setExpandedFaq((prev) => (prev === id ? null : id))
   }
-  const renderFaqs = () => {
-    return faqs.map((faq) => (
+  const renderFaqs = () =>
+    faqs.map((faq) => (
       <QACollapse
         id={faq.question}
         key={faq.question}
@@ -19,7 +20,11 @@ export const Faq = () => {
         onClick={handleExpanderClick}
       />
     ))
-  }
 
-  return <div className="flex flex-col gap-10 my-20">{renderFaqs()}</div>
+  return (
+    <section id="faqs" className="flex flex-col items-center gap-10 my-20">
+      <Title>Faqs</Title>
+      {renderFaqs()}
+    </section>
+  )
 }

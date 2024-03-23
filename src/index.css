@@ -18,9 +18,33 @@ li[data-sonner-toast][data-type='error'] svg {
   display: grid;
   gap: 1rem;
   grid-auto-rows: 22rem;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+
+  @media (max-width: 664.99px) {
+      grid-template-columns: 1fr;
+    }
+
+  @media (min-width: 665px) and (max-width: 1200px) {
+      grid-template-columns: 1fr 1fr;
+  }
 }
 
+.hero-title {
+  font-size: clamp(2.8rem, 10vw, 6rem);
+}
+
+.hero-description {
+  font-size: clamp(1.4rem, 5vw, 2.25rem);
+}
+
+.hero-caption {
+  font-size: clamp(1rem, 5vw, 1.5rem);
+}
+
+.text-fluid-title {
+  font-size: clamp(2.2rem, 10vw, 5rem);
+  text-align: center;
+}
 
 /* Animations */
 .animate-fade-down {
@@ -51,14 +75,17 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 4rem;
 
-  @media (width <= 800px) {
+  @media (width <= 1004px) {
     flex-direction: column;
     align-items: center;
   }
 }
 
 .box:nth-child(2) {
-  align-self: center;
+  align-self: start;
+
+  @media (width <= 1004px) {
+    order: -1;
+  }
 }

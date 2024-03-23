@@ -5,12 +5,13 @@ import { Toaster } from 'sonner'
 import { ROUTE } from './routes'
 import { Nav } from './components/Nav'
 import { Regulation } from './components/Regulation'
+import { Footer } from './components/Footer'
 
 function App() {
   return (
-    <main className=" min-h-screen flex bg-cBackogrund text-cWhite">
-      <section className="max-w-7xl mx-auto w-full px-8">
-        <Nav />
+    <>
+      <Nav />
+      <main className="min-h-screen flex bg-cBackground text-cWhite max-w-7xl mx-auto px-8">
         <Routes>
           <Route path={ROUTE.home} element={<Home />} />
           <Route path={ROUTE.register} element={<Register />} />
@@ -25,8 +26,9 @@ function App() {
             }
           }}
         />
-      </section>
-    </main>
+      </main>
+      <Footer />
+    </>
   )
 }
 
