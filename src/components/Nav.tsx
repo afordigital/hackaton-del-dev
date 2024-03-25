@@ -8,6 +8,14 @@ export const Nav = () => {
   const { pathname } = useLocation()
   const isHome = pathname === ROUTE.home
   const [isOpen, setIsOpen] = useState(false)
+  const currentHash = window.location.hash
+  const navItems = [
+    { id: 'root', title: 'Inicio' },
+    { id: 'rules', title: 'Reglas' },
+    { id: 'sponsors', title: 'Patrocinadores' },
+    { id: 'awards', title: 'Premios' },
+    { id: 'faqs', title: 'Preguntas' }
+  ]
 
   const classes = {
     container: cn(
@@ -41,9 +49,26 @@ export const Nav = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const elementPosition = element.offsetTop
+      window.scrollTo({ top: elementPosition - 60, behavior: 'smooth' })
     }
   }
+
+  const liElements = navItems.map((item) => (
+    <li key={item.id}>
+      <Link
+        to={`#${item.id}`}
+        onClick={() => {
+          scrollToSection(item.id)
+        }}
+        className={classes.link(
+          currentHash === `#${item.id}` || (!currentHash && item.id === 'root')
+        )}
+      >
+        {item.title}
+      </Link>
+    </li>
+  ))
 
   return isHome ? (
     <header className={classes.container}>
@@ -56,60 +81,7 @@ export const Nav = () => {
 
       <nav className={classes.nav}>
         <ul className={classes.list}>
-          <li>
-            <Link to={ROUTE.home} className={classes.link(isHome)}>
-              Inicio
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="#rules"
-              onClick={() => {
-                scrollToSection('rules')
-              }}
-              className={classes.link(false)}
-            >
-              Reglas
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="#sponsors"
-              onClick={() => {
-                scrollToSection('sponsors')
-              }}
-              className={classes.link(false)}
-            >
-              Patrocinadores
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="#awards"
-              onClick={() => {
-                scrollToSection('awards')
-              }}
-              className={classes.link(false)}
-            >
-              Premios
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="#faqs"
-              onClick={() => {
-                scrollToSection('faqs')
-              }}
-              className={classes.link(false)}
-            >
-              Preguntas
-            </Link>
-          </li>
-
+          {liElements}
           <li>
             <Link to={ROUTE.register} className={classes.link(false)}>
               Inscripción
