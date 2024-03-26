@@ -12,7 +12,7 @@ La Hackathon Del Dev: una hackathon para cualquier dev.\
 
 </div>
 
-### Capturas de pantalla de la web de La Velada IV
+### Capturas de pantalla
 ![Desktop_README.webp](https://github.com/Edgarmejiav/hackaton-del-dev/assets/35704346/8e5a405a-5bef-4dc2-8f2d-46fdfadc7036)
 
 ## Authors
