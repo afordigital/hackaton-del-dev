@@ -48,7 +48,7 @@ export const QACollapse = ({
       'bg-transparent border-none text-white',
       'z-1 relative',
       'transition-colors duration-300',
-      'w-full h-full underline',
+      'w-full h-full underline hover:text-green',
       'text-2xl font-bold',
       {
         'text-green': isExpanded
